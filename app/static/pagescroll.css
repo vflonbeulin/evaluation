@@ -1,0 +1,242 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:#DCDCDC;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#pagescroll{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-out;
+}
+.controllers{
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#control-up,
+#control-down {
+    cursor: pointer;
+    margin: 5px;
+    transform: scale(0.5);
+    transition: 0.2s;
+}
+
+#control-down{
+    transform: rotate(180deg)  scale(0.5);
+}
+#control-down:hover{
+    transform: rotate(180deg)  scale(0.7);
+}
+#control-up:hover{
+    transform: scale(0.7);
+}
+
+.section.welcome {
+    font-size: 3em;
+    color: red;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@-webkit-keyframes glide  {
+   from {
+      left:0px;
+      top:0px;
+   }
+   
+   to {
+      left:-30px;
+      top:30px;
+   }
+
+}
+
+.section.team {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+}
+
+.photos img {
+    margin: 10px 0 10px 0;
+    border-radius: 10%;
+}
+
+.section.screen {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.section.library {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.section.library span {
+    margin-left: 50px;
+}
+
+span {
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: bold;
+    display: block;
+}
+
+.section.prediction {
+    display: flex;
+    flex-direction: column;
+}
+
+.section.prediction form {
+    display: flex;
+    flex-direction: column;
+}
+
+.section.prediction form > label {
+    margin: 10px 0 10px 0;
+}
+
+.section.prediction label.skill {
+    margin: 10px 0 0px 0;
+}
+
+.section.prediction form > input[type="submit"],span,#result {
+    margin-top: 20px;
+}
+
+.section.prediction small {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.chartBox {   
+    width: 25%;
+    height: 25%;
+}
+
+.section.chart {
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.section.chart > div {
+  display: flex; 
+  flex-basis: calc(50% - 40px);  
+  justify-content: center;
+  flex-direction: column;
+}
+
+.section.chart > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+/* Title effect */
+/* I found James Bosworth's codepen the other day (https://codepen.io/bosworthco/) and saw his work on shifted perspective and wanted to learn how to make it.
+I also found this Youtube video (https://www.youtube.com/watch?v=LgiadQQM6mo&list=PLbu98QxRH81KxxMclY_ZRmm4Dac-n7cSA) which is a great tutorial of the project. Enjoy!
+*/
+
+
+.perspective-text {
+  color: white;
+  font-family: Arial;
+  font-size: 58px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.perspective-line {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+p {
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.perspective-line:nth-child(odd) {
+  transform: skew(60deg, -30deg) scaleY(0.667);
+}
+
+.perspective-line:nth-child(even) {
+  transform: skew(0deg, -30deg) scaleY(1.337);
+}
+
+.perspective-text:hover p {
+  transform: translate(0, -50px);
+}
+
+.perspective-line:nth-child(1) {
+  left: 29px;
+}
+
+.perspective-line:nth-child(2) {
+  left: 58px;
+  background: #f07e6e;
+}
+
+.perspective-line:nth-child(3) {
+  left: 87px;
+  background: #84cdfa;
+}
+
+.perspective-line:nth-child(4) {
+  left: 116px;
+  background: #5ad1cd;
+}
+
+.perspective-line:nth-child(5) {
+  left: 145px;
+}
+
+/*************************************/
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    width: 100%;
+    height:100vh;
+}
